@@ -21,16 +21,13 @@ class Solution {
       int minimumLength = INT_MAX;
       string retValue = "";
       for (char t : T) {
-        if (counter.count(t) == 0) {
-          counter.insert(pair<char, int>(t, 0));
-        }
         counter[t]++;
       }
       for (int j = 0; j < S.length(); j++) {
         if (counter.count(S[j]) != 0) {
           int i = counter[S[j]];
           if (i == 0) {
-            auto i = c.at(S[j]).front();
+            auto i = c[S[j]].front();
             queue.erase(i);
             c[S[j]].pop();
           } else {
